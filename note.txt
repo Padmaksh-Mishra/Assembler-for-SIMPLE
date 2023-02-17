@@ -1,0 +1,15 @@
+When emu will come to the branch or call lines it will see last 24 bits as the offset for the pc.
+Thus the offset should be made set in assembler itself as Current_PC-Label_PC 
+While execution of EMU the program will rewind the lines by value(last 24)/4 
+
+ASSEMBLER:
+    SET and DATA is left to implement 
+    lines like "label:inst op" are dangerous
+    data and set will function similarly to me
+EMU:
+    It will read the list of instructions 
+    Stack and stack pointer will be also there
+    Kitna rewind karna hai wo bhi branch or call ke operands bata denge
+
+    RETRUN: it will take the pc to the value stored in A to the PC kind of it will rewind the line --- The value in here was stored by CALL.
+    afik if no return the program will continue into another label;
